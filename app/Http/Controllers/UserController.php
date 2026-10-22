@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index()
+    // Profile Page: Displays the single user record
+    public function profile()
     {
-        $users = User::all();
-        return view('users.index', compact('users'));
+        $user = User::first();
+        return view('profile', compact('user'));
     }
 }
